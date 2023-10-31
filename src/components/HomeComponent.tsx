@@ -4,9 +4,13 @@ import { useCars } from '../hooks/useCars';
 import { CarCard } from "./Card";
 
 import styles from '../../public/css/home.module.css';
+import PaginationDesktop from "./PaginationDesktop";
 
-export const HelloWorld: React.FC = () => {
+export const HomeComponent: React.FC = () => {
   const { cars } = useCars();
+
+  const onClickLeft = () => { }
+  const onClickRight = () => { }
 
   console.log(cars);
   return (
@@ -16,6 +20,7 @@ export const HelloWorld: React.FC = () => {
       <div className={styles.cardsWrapper}>
         {cars.map(car => <CarCard key={car.id} car={car} />)}
       </div>
+      <PaginationDesktop onClickLeft={onClickLeft} onClickRight={onClickRight} />
     </div>
   );
 };

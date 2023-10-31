@@ -1,5 +1,7 @@
-import { Flex, IconButton } from "vcc-ui";
+import { Flex, IconButton, View } from "vcc-ui";
 import ChevronIcon from "./icons/chevron-icon";
+
+import styles from "../../public/css/paginationDesktop.module.css";
 
 interface PaginationDesktopProps {
     onClickLeft: () => void,
@@ -9,13 +11,11 @@ interface PaginationDesktopProps {
 
 export default function PaginationDesktop({ onClickLeft, onClickRight }: PaginationDesktopProps) {
     return (
-        <Flex extend={{
-            justifyContent: 'flex-start',
-            alignItems: 'center',
-            flexDirection: 'row',
-            margin: 0
+        <View bg="background.secodary"
+            direction="row"
+            justifyContent="space-between">
 
-        }}>
+
 
             <IconButton
                 variant="outline"
@@ -28,6 +28,6 @@ export default function PaginationDesktop({ onClickLeft, onClickRight }: Paginat
                 onClick={onClickRight} aria-label="direita"
                 iconName="navigation-chevronforward" />
 
-        </Flex>
+        </View>
     )
 }
